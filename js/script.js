@@ -191,7 +191,7 @@
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data.success) {
-            formNote.textContent = "Thanks — your message is on its way. I'll get back to you soon.";
+            formNote.textContent = "Thank you for reaching out! I'll get back to you soon!";
             contactForm.reset();
           } else {
             throw new Error(data.message || 'Something went wrong.');
