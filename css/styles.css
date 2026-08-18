@@ -814,6 +814,14 @@ input, textarea { font-family: inherit; }
   transition: border-color var(--dur-fast) var(--ease);
 }
 .form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--accent); }
+.form-row input.is-invalid { border-color: #f87171; }
+.form-row input.is-valid { border-color: #34d399; }
+.field-error {
+  font-size: 0.78rem;
+  color: #f87171;
+  min-height: 1em;
+  display: block;
+}
 .form-note { font-size: 0.85rem; color: var(--accent-2); min-height: 1.2em; }
 .form-note.is-error { color: #f87171; }
 .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }

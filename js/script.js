@@ -137,11 +137,44 @@
   /* ---------- Contact form (Web3Forms) ---------- */
   var contactForm = document.getElementById('contact-form');
   var formNote = document.getElementById('form-note');
+  var emailInput = document.getElementById('cf-email');
+  var emailError = document.getElementById('cf-email-error');
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function isEmailWellFormed(value) {
+    return EMAIL_RE.test(value.trim());
+  }
+
+  function validateEmailField() {
+    if (!emailInput) return true;
+    var value = emailInput.value.trim();
+    if (value === '') {
+      emailInput.classList.remove('is-valid', 'is-invalid');
+      if (emailError) emailError.textContent = '';
+      return false;
+    }
+    var ok = isEmailWellFormed(value);
+    emailInput.classList.toggle('is-invalid', !ok);
+    emailInput.classList.toggle('is-valid', ok);
+    if (emailError) emailError.textContent = ok ? '' : 'That doesn’t look like a valid email address.';
+    return ok;
+  }
+
+  if (emailInput) {
+    emailInput.addEventListener('input', validateEmailField);
+    emailInput.addEventListener('blur', validateEmailField);
+  }
+
   if (contactForm && formNote) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
       if (contactForm.botcheck && contactForm.botcheck.checked) return; // honeypot tripped
+
+      if (!validateEmailField()) {
+        emailInput.focus();
+        return;
+      }
 
       var submitBtn = contactForm.querySelector('button[type="submit"]');
       var originalLabel = submitBtn.textContent;
