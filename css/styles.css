@@ -553,10 +553,11 @@ input, textarea { font-family: inherit; }
   box-shadow: 0 0 0 6px var(--accent-soft);
 }
 .timeline-content { padding-bottom: 8px; }
-.tl-head { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 28px; }
+.tl-head { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 14px; }
 .tl-head h3 { font-size: 1.35rem; margin-bottom: 4px; }
 .tl-org { color: var(--accent-2); font-size: 0.92rem; font-weight: 500; }
 .tl-date { font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-faint); white-space: nowrap; }
+.tl-summary { color: var(--text-muted); font-size: 0.98rem; max-width: 70ch; margin-bottom: 28px; }
 
 .impact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .impact-card {
