@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuradha Kalkar Portfolio</title>
+<meta name="description" content="Portfolio of Anuradha Parag Kalkar — aspiring Data Scientist and AI/ML researcher, building intelligent solutions with data, machine learning and innovation.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%230b1130%22/><circle cx=%2250%22 cy=%2250%22 r=%2212%22 fill=%22%2322d3ee%22/><circle cx=%2222%22 cy=%2230%22 r=%226%22 fill=%22%234f8dff%22/><circle cx=%2278%22 cy=%2270%22 r=%226%22 fill=%22%234f8dff%22/><line x1=%2250%22 y1=%2250%22 x2=%2222%22 y2=%2230%22 stroke=%22%2322d3ee%22 stroke-width=%223%22/><line x1=%2250%22 y1=%2250%22 x2=%2278%22 y2=%2270%22 stroke=%22%2222d3ee%22 stroke-width=%223%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<!-- Skip link -->
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- ===== Background AI/data motif (fixed, whole page) ===== -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ===== Navigation ===== -->
+<header class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Anuradha Kalkar — Home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30">
+          <circle cx="20" cy="20" r="3.4" class="lm-core"/>
+          <circle cx="7" cy="12" r="2.4" class="lm-node"/>
+          <circle cx="33" cy="12" r="2.4" class="lm-node"/>
+          <circle cx="7" cy="28" r="2.4" class="lm-node"/>
+          <circle cx="33" cy="28" r="2.4" class="lm-node"/>
+          <path d="M20 20 L7 12 M20 20 L33 12 M20 20 L7 28 M20 20 L33 28" class="lm-line"/>
+        </svg>
+      </span>
+      <span class="logo-text">Anuradha Kalkar<span class="logo-dot"></span></span>
+    </a>
+
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
+      <a href="#leadership" class="nav-link" data-section="leadership">Leadership</a>
+      <a href="#interests" class="nav-link" data-section="interests">Interests</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      <a href="assets/Anuradha_Kalkar_Resume.pdf" class="nav-link nav-link-resume" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16"/></svg>
+        Resume
+      </a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark mode" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g class="rays"><line x1="12" y1="1.5" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.5" y2="6.5"/><line x1="17.5" y1="17.5" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.5" y2="17.5"/><line x1="17.5" y1="6.5" x2="19.6" y2="4.4"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20.5 14.5a8.5 8.5 0 1 1-9-11 6.8 6.8 0 0 0 9 11z"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's Talk</a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ===== 1. HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="section-inner hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow reveal"><span class="status-dot" aria-hidden="true"></span>Open to opportunities in AI/ML &amp; Data Science</p>
+
+        <h1 class="hero-title reveal">
+          Building Intelligent Solutions with <span class="grad-text">Data</span>, <span class="grad-text">AI</span> &amp; Innovation.
+        </h1>
+
+        <p class="hero-role reveal">Data Scientist&nbsp;·&nbsp;AI/ML Research Enthusiast&nbsp;·&nbsp;Problem Solving</p>
+
+        <p class="hero-desc reveal">
+          A recently graduated Information Technology engineer passionate about transforming data into intelligent
+          solutions, exploring AI/ML research, and building practical technology that creates measurable impact.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+        </div>
+
+        <div class="hero-meta reveal">
+          <div class="hero-meta-item">
+            <span class="hm-num" data-count="6">0</span><span class="hm-suffix">+</span>
+            <span class="hm-label">Hackathons</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hm-num" data-count="2">0</span>
+            <span class="hm-label">Wins</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hm-num" data-count="7.91">0</span>
+            <span class="hm-label">CGPA / 10</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="portrait-glow" aria-hidden="true"></div>
+        <div class="portrait-frame">
+          <div class="portrait-ring" aria-hidden="true"></div>
+          <div class="portrait-photo">
+            <img src="assets/profile.jpg" alt="Portrait of Anuradha Parag Kalkar" width="320" height="346" loading="eager">
+          </div>
+          <span class="portrait-badge">AK</span>
+        </div>
+        <div class="hero-tags">
+          <span class="floating-tag tag-1">Innovation</span>
+          <span class="floating-tag tag-2">Data Science</span>
+          <span class="floating-tag tag-3">Research Enthusiast</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue reveal" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ===== 2. ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="section-kicker reveal">01 — Who I Am</p>
+      <h2 class="section-title reveal">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            I'm Anuradha — a recently graduated Information Technology engineer from
+            <strong>MKSSS's Cummins College of Engineering for Women, Pune</strong>. My curiosity sits at the
+            intersection of <strong>data, algorithms, and impact</strong> — turning sparse, high-volume data into
+            models that change outcomes. I'm equally drawn to <strong>building from the ground up</strong>: experimenting
+            with unfamiliar problems and turning promising ideas into things that actually exist.
+          </p>
+          <p>
+            That curiosity took shape during my time as a <strong>Data Science Intern on Cummins India's Global AI
+            and Analytics team</strong>, where I worked on machine learning prognostics for engine assets and
+            production automation. It has also pushed me onto the global stage as an <strong>HPAIR delegate at the University of Tokyo</strong>,
+            representing India among 100+ delegates and young entrepreneurs from all over the globe.
+          </p>
+          <p>
+            Alongside the technical work, I've taken on leadership roles across my college — from managing a
+            six-figure student budget to running outreach that encourages more girls into technology. I'm now
+            looking for opportunities to keep building at the intersection of AI/ML research, data science, and
+            real-world problem solving.
+          </p>
+        </div>
+
+        <div class="about-side reveal">
+          <div class="stat-card">
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+                <span class="stat-label">Hackathons</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num" data-count="2">0</span>
+                <span class="stat-label">Hackathon Wins</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num" data-count="1">0</span>
+                <span class="stat-label">International Achievement</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num" data-count="1000">0</span><span class="stat-plus">+</span>
+                <span class="stat-label">Employees Impacted</span>
+              </div>
+              <div class="stat stat-wide">
+                <span class="stat-num" data-count="1">0</span><span class="stat-suffix">Lakh+</span>
+                <span class="stat-label">Engine Assets Monitored</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. EXPERIENCE ===== -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <p class="section-kicker reveal">02 — What I've Built</p>
+      <h2 class="section-title reveal">Experience</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="tl-head">
+              <div>
+                <h3>Data Science Intern</h3>
+                <p class="tl-org">Cummins India Inc. — Global AI and Analytics Team</p>
+              </div>
+              <span class="tl-date">Jun 2025 – Dec 2025</span>
+            </div>
+
+            <div class="impact-cards">
+              <div class="impact-card">
+                <span class="impact-num">18–20%</span>
+                <p>Reduction in false failure claims by designing and validating a layered ML prognostics system for engine units.</p>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">~1 Lakh</span>
+                <p>Monitored engine assets supported by earlier failure detection from the prognostics system.</p>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">80%</span>
+                <p>Failure-prediction accuracy achieved through EDA and statistical hypothesis testing on high-volume sensor data.</p>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">15 days → hrs</span>
+                <p>Manual payroll processing cut down by building a production-ready React + MySQL payroll application for 1,000+ employees.</p>
+              </div>
+              <div class="impact-card">
+                <span class="impact-num">10M</span>
+                <p>Engine records structured via scalable data pipelines across Neo4j knowledge graphs and Apache Spark.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. SKILLS ===== -->
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <p class="section-kicker reveal">03 — What I Know</p>
+      <h2 class="section-title reveal">Skills &amp; Expertise</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>AI / Machine Learning</h3>
+          <div class="tag-cluster">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">Reinforcement Learning</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Predictive Modeling</span>
+            <span class="skill-tag">Statistical Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Data Science &amp; Analytics</h3>
+          <div class="tag-cluster">
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Exploratory Data Analysis</span>
+            <span class="skill-tag">Statistical Hypothesis Testing</span>
+            <span class="skill-tag">Data Pipeline Development</span>
+            <span class="skill-tag">Predictive Analytics</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>Technology</h3>
+          <div class="tag-cluster">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3>AI / Data Tools</h3>
+          <div class="tag-cluster">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">Databricks</span>
+            <span class="skill-tag">Neo4j</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal skill-card-wide">
+          <h3>Languages</h3>
+          <div class="tag-cluster">
+            <span class="skill-tag">English</span>
+            <span class="skill-tag">Japanese — JLPT N5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. PROJECTS ===== -->
+  <section class="section section-alt" id="projects">
+    <div class="section-inner">
+      <p class="section-kicker reveal">04 — Selected Work</p>
+      <h2 class="section-title reveal">Projects</h2>
+
+      <!-- Featured project -->
+      <article class="project-featured reveal">
+        <div class="project-featured-badge">🏆 1st Place — Allianz Global Tech Championship · EUR 5,000 Scholarship</div>
+        <div class="project-featured-grid">
+          <div>
+            <h3>AI-Based Energy Consumption Prediction</h3>
+            <p class="project-lede">A machine-learning and deep-learning forecasting solution for household energy consumption, built for the Allianz Global Tech Championship.</p>
+            <div class="project-detail-grid">
+              <div><span class="pd-label">Problem</span><p>Households lack visibility into what drives their energy usage, making reduction efforts unfocused.</p></div>
+              <div><span class="pd-label">Solution</span><p>An ML/DL forecasting pipeline in Databricks that predicts consumption and turns outputs into actionable recommendations.</p></div>
+              <div><span class="pd-label">Impact</span><p>Projected household energy reduction of approximately <strong>40%</strong>.</p></div>
+            </div>
+            <div class="tag-cluster">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Deep Learning</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Data Analysis</span>
+              <span class="skill-tag">EDA</span>
+              <span class="skill-tag">Databricks</span>
+            </div>
+          </div>
+          <div class="project-featured-visual" aria-hidden="true">
+            <svg viewBox="0 0 300 300" class="pf-graphic">
+              <circle cx="150" cy="150" r="120" class="pf-ring"/>
+              <circle cx="150" cy="150" r="90" class="pf-ring pf-ring-2"/>
+              <path d="M40 190 Q 90 90 150 140 T 260 100" class="pf-curve"/>
+              <circle cx="40" cy="190" r="4" class="pf-dot"/>
+              <circle cx="150" cy="140" r="4" class="pf-dot"/>
+              <circle cx="260" cy="100" r="4" class="pf-dot"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Other projects -->
+      <div class="project-grid">
+        <article class="project-card reveal" tabindex="0">
+          <div class="project-card-top">
+            <h3>Chess AI Game</h3>
+            <span class="project-impact-chip">80% win rate</span>
+          </div>
+          <p>A human-vs-AI chess game powered by reinforcement learning and pathfinding-based move selection, with a full-stack React interface for real-time play.</p>
+          <div class="project-detail">
+            <div><span class="pd-label">Problem</span><p>Casual players need an engaging, adaptive opponent rather than a static rules engine.</p></div>
+            <div><span class="pd-label">Solution</span><p>An RL-driven move-selection agent paired with a real-time React/JavaScript game environment and MySQL move logging.</p></div>
+            <div><span class="pd-label">Impact</span><p>Achieved an <strong>80% win rate</strong> against intermediate-level players.</p></div>
+          </div>
+          <div class="tag-cluster">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Reinforcement Learning</span>
+          </div>
+          <span class="project-expand-cue">Hover / tap for details ↓</span>
+        </article>
+
+        <article class="project-card reveal" tabindex="0">
+          <div class="project-card-top">
+            <h3>Legal Document Summarizer</h3>
+            <span class="project-impact-chip">10–12 days saved</span>
+          </div>
+          <p>An NLP pipeline combining text vectorization, topic modeling, and automatic summarization for contracts and NDAs.</p>
+          <div class="project-detail">
+            <div><span class="pd-label">Problem</span><p>Manual review of lengthy legal documents is slow and inconsistent.</p></div>
+            <div><span class="pd-label">Solution</span><p>An NLP pipeline that vectorizes text, models topics, and generates automatic summaries of contracts and NDAs.</p></div>
+            <div><span class="pd-label">Impact</span><p>Cut manual review time by <strong>10–12 days</strong>; validated against 50 real contract and NDA documents.</p></div>
+          </div>
+          <div class="tag-cluster">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Topic Modeling</span>
+            <span class="skill-tag">Summarization</span>
+          </div>
+          <span class="project-expand-cue">Hover / tap for details ↓</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. ACHIEVEMENTS ===== -->
+  <section class="section" id="achievements">
+    <div class="section-inner">
+      <p class="section-kicker reveal">05 — What I've Achieved</p>
+      <h2 class="section-title reveal">Achievements &amp; Recognition</h2>
+
+      <div class="achieve-grid">
+        <div class="achieve-card achieve-highlight reveal">
+          <span class="achieve-icon">🏆</span>
+          <h3>Winner — Allianz Global Tech Championship</h3>
+          <p>1st place, one of only 10 winners in India · EUR 5,000 scholarship</p>
+          <span class="achieve-year">2023</span>
+        </div>
+        <div class="achieve-card achieve-highlight reveal">
+          <span class="achieve-icon">🌏</span>
+          <h3>HPAIR Delegate — University of Tokyo</h3>
+          <p>Represented India among 100+ global delegates and entrepreneurs</p>
+          <span class="achieve-year">2025</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-icon">☁️</span>
+          <h3>Amazon AWS AI &amp; ML Scholarship Program</h3>
+          <p>Mentee</p>
+          <span class="achieve-year">2024</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-icon">💠</span>
+          <h3>DELL ASPIRE Traineeship for Women</h3>
+          <p>Mentee — selected from 120 applicants</p>
+          <span class="achieve-year">2025</span>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-icon">🎌</span>
+          <h3>JLPT N5 Certification</h3>
+          <p>Japanese Language Proficiency Test — N5</p>
+        </div>
+        <div class="achieve-card reveal">
+          <span class="achieve-icon">⚡</span>
+          <h3>6+ Hackathons</h3>
+          <p>2 wins, including an international achievement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. LEADERSHIP ===== -->
+  <section class="section section-alt" id="leadership">
+    <div class="section-inner">
+      <p class="section-kicker reveal">06 — How I Lead</p>
+      <h2 class="section-title reveal">Leadership</h2>
+
+      <div class="leadership-grid">
+        <div class="leader-card reveal">
+          <span class="leader-icon" aria-hidden="true">🎓</span>
+          <span class="tl-date leader-date">Sep 2024 – Sep 2026</span>
+          <h3>National Education Policy College Ambassador</h3>
+          <p class="tl-org">Cummins College of Engineering</p>
+          <ul>
+            <li>One of three NEP student ambassadors for the college.</li>
+            <li>Conducted outreach encouraging school girls to pursue technology.</li>
+          </ul>
+        </div>
+
+        <div class="leader-card reveal">
+          <span class="leader-icon" aria-hidden="true">💰</span>
+          <span class="tl-date leader-date">Aug 2024 – Aug 2025</span>
+          <h3>Assistant Treasurer — Student Committee</h3>
+          <p class="tl-org">Cummins College of Engineering</p>
+          <ul>
+            <li>Managed an INR 10 lakh+ budget for committee operations.</li>
+            <li>Maintained accurate financial records across 23 intercollege events.</li>
+          </ul>
+        </div>
+
+        <div class="leader-card reveal">
+          <span class="leader-icon" aria-hidden="true">🛡️</span>
+          <span class="tl-date leader-date">Sep 2024 – Sep 2025</span>
+          <h3>Event Management Head — Cybersecurity Club</h3>
+          <p class="tl-org">Cummins College of Engineering</p>
+          <ul>
+            <li>Organized cybersecurity awareness events and workshops.</li>
+            <li>Grew active club membership by 25%.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="section-inner">
+      <p class="section-kicker reveal">07 — What I Want to Work On</p>
+      <h2 class="section-title reveal">Areas of Interest</h2>
+      <p class="section-sub reveal">Not a fixed service menu — the kinds of problems I'm actively looking to work on next.</p>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><path d="M6 32V16M16 32V8M26 32V20M36 32V12" class="si-bars"/></svg>
+          </span>
+          <h3>Data Analysis</h3>
+          <p>Turning complex datasets into meaningful insights, patterns, and actionable conclusions.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><circle cx="12" cy="12" r="4"/><circle cx="28" cy="12" r="4"/><circle cx="20" cy="28" r="4"/><path d="M14.8 14.8 17.5 25.5M25.2 14.8 22.5 25.5M16 12H24" class="si-lines"/></svg>
+          </span>
+          <h3>Data Science</h3>
+          <p>Developing data-driven solutions using statistical analysis, predictive modeling, experimentation, and machine learning.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="24" rx="4" class="si-box"/><path d="M14 20h12M20 14v12" class="si-lines"/></svg>
+          </span>
+          <h3>Machine Learning Development</h3>
+          <p>Building and evaluating machine-learning systems for real-world problems.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><path d="M20 6c-7 0-11 5-11 11 0 5 3 7 4 10h14c1-3 4-5 4-10 0-6-4-11-11-11Z" class="si-box"/><path d="M16 31h8M18 35h4" class="si-lines"/></svg>
+          </span>
+          <h3>AI Research &amp; Development</h3>
+          <p>Exploring emerging AI/ML methods and translating research-oriented ideas into practical prototypes and intelligent applications.</p>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><path d="M8 26 16 14l8 8 8-16" class="si-lines"/><circle cx="8" cy="26" r="2.5"/><circle cx="16" cy="14" r="2.5"/><circle cx="24" cy="22" r="2.5"/><circle cx="32" cy="6" r="2.5"/></svg>
+          </span>
+          <h3>Innovation &amp; Problem Solving</h3>
+          <p>Applying technology creatively to complex problems through experimentation, prototyping, and iterative development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. EDUCATION ===== -->
+  <section class="section section-alt" id="education">
+    <div class="section-inner">
+      <p class="section-kicker reveal">08 — Foundations</p>
+      <h2 class="section-title reveal">Education</h2>
+
+      <div class="edu-list">
+        <div class="edu-item edu-primary reveal">
+          <div class="edu-main">
+            <h3>B.Tech, Information Technology</h3>
+            <p class="tl-org">MKSSS's Cummins College of Engineering for Women, Pune</p>
+          </div>
+          <div class="edu-meta">
+            <span class="tl-date">2022 – 2026</span>
+            <span class="edu-score">CGPA: 7.91/10</span>
+          </div>
+        </div>
+        <div class="edu-item reveal">
+          <div class="edu-main">
+            <h3>Class XII</h3>
+            <p class="tl-org">Loyola Junior College, Pune</p>
+          </div>
+          <div class="edu-meta">
+            <span class="tl-date">2020 – 2022</span>
+            <span class="edu-score">73%</span>
+          </div>
+        </div>
+        <div class="edu-item reveal">
+          <div class="edu-main">
+            <h3>Class X</h3>
+            <p class="tl-org">Bharatiya Vidya Bhavan, Pune</p>
+          </div>
+          <div class="edu-meta">
+            <span class="tl-date">May 2020</span>
+            <span class="edu-score">94.5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <p class="section-kicker reveal">09 — Let's Connect</p>
+      <h2 class="section-title reveal">Let's Build Something Intelligent.</h2>
+      <p class="section-sub reveal">Interested in data, AI/ML research, and innovative technology? Let's connect.</p>
+
+      <div class="contact-grid">
+        <div class="contact-links reveal">
+          <a class="contact-row" href="mailto:kalkaranuradha25@gmail.com">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+            </span>
+            <span>
+              <small>Email</small>
+              kalkaranuradha25@gmail.com
+            </span>
+          </a>
+          <a class="contact-row" href="tel:+919284469995">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4.5 3.5h3.6l1.6 4.6-2.2 1.9a13 13 0 0 0 6.5 6.5l1.9-2.2 4.6 1.6v3.6c0 1-1 1.9-2 1.8-8-.6-14.4-7-15-15-.1-1 .8-2 1.8-2Z"/></svg>
+            </span>
+            <span>
+              <small>Phone</small>
+              +91 92844 69995
+            </span>
+          </a>
+          <a class="contact-row" href="https://www.linkedin.com/in/anuradha-kalkar-408b02290/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.7v.1M11.5 16.5v-3.6c0-1.6 1-2.7 2.5-2.7s2.5 1.1 2.5 2.7v3.6" fill="none" class="li-mark"/></svg>
+            </span>
+            <span>
+              <small>LinkedIn</small>
+              /in/anuradha-kalkar
+            </span>
+          </a>
+          <a class="contact-row" href="https://github.com/kalkaranuradha25-pixel" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.2-.5-1.3.1-2.7 0 0 .9-.3 2.9 1a10 10 0 0 1 5.2 0c2-1.3 2.9-1 2.9-1 .6 1.4.2 2.5.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+            </span>
+            <span>
+              <small>GitHub</small>
+              /kalkaranuradha25-pixel
+            </span>
+          </a>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form">
+          <input type="hidden" name="access_key" value="cd96bce0-0653-4b44-9434-0d373acbed0e">
+          <input type="hidden" name="subject" value="New message from your portfolio site">
+          <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Send Message
+          </button>
+          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <span>© <span id="year"></span> Anuradha Parag Kalkar. Designed &amp; built with data, curiosity, and care.</span>
+    <a href="#home" class="footer-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
